@@ -4,10 +4,18 @@
 var cards = "1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18".split(',');
 const gameContainer = document.querySelector('.game-container');
 for (var c in cards) {
-  var newElement = document.createElement('div');
+  var newElement = document.createElement('div');//skapar
   newElement.id = cards[c]; newElement.className = "cards";
   newElement.innerHTML = cards[c];
   gameContainer.appendChild(newElement);
+
+  var cardBack = document.createElement('div');
+cardBack.className = "card-back card-face";//skapar en div inuti "cards" diven
+newElement.appendChild(cardBack);
+
+var cardFront = document.createElement('div');
+cardFront.className = "card-front card-face";
+cardBack.appendChild(cardFront);
 }
 
 
