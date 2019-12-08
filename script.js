@@ -1,7 +1,7 @@
 
 
 
-var cards = "1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18".split(',');
+var cards = " , , , , , , , , , , , , , , , , , ".split(',');
 const gameContainer = document.querySelector('.game-container');
 for (var c in cards) {
   var newElement = document.createElement('div');//skapar
@@ -16,6 +16,11 @@ newElement.appendChild(cardBack);
 var cardFront = document.createElement('div');
 cardFront.className = "card-front card-face";
 cardBack.appendChild(cardFront);
+
+var backImage = document.createElement('img');
+cardFront.className = "card-front card-face";
+cardBack.appendChild(cardFront);
+
 }
 
 
