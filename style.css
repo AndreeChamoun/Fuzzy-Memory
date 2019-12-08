@@ -2,6 +2,8 @@
 --background: rgb(252,70,107)radial-gradient(circle, rgba(252,70,107,1) 0%, rgba(219,70,252,1) 100%);
 --deck-background:#46fcaa;
 --card-background:#46fcd2;
+--card-match-background:#9bcb3c;
+--card-notmatching-background:#ee0e51;
 }
 
 html,
@@ -18,18 +20,23 @@ body {
     overflow: hidden;
     font-family: 'Coda', cursive;
 }
-.deck {
+.game-container {
 width: 345px;
 margin: 0 auto;
 background: var(--deck-background);
 padding: 16px;
 border-radius: 10px;
 box-shadow: 13px 13px 0 0 #000000;
+display: grid;
+grid-template-columns: repeat(4, auto);
 }
-.card{
+.grid-info-container {
+    grid-column: 1 /-1;
+}
+.cards{
     height: 75px;
     width: 75px;
-    background: var(--card-background);
+    background: black ;
     display: inline-block;
     margin: 0 15px 15px 0;
     line-height: 140px;
@@ -44,6 +51,42 @@ box-shadow: 13px 13px 0 0 #000000;
     font-family:"";
     line-height: 75px;
 }
+
 :nth-child(4n) {
     margin: 0 0 15px 0;
+}
+.open {
+transform: rotateY(0);
+background: transparent;
+cursor: default;
+}
+.show {
+    font-size: 35px;
+}
+.match {
+    transform: rotateY(0);
+    background:var(--card-match-background);
+    font-size: 35px;
+}
+.notmatch {
+    background: var(--card-notmatching-background);
+}
+#score {
+    text-align: left;
+    width: 350px;
+    margin-bottom: 10px;
+}
+.stars {
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+    margin: 0 5px 0 0;  
+}
+li {
+    list-style: none;
+    display: inline-block;
+}
+.restart {
+    float: right;
+    cursor: pointer;
 }
