@@ -1,5 +1,12 @@
 
-
+var random_images_array = ["/img/Amethyst.png", "/img/Bismuth.png","/img/Chrysocolla.png","/img/Erythrite.png","Euclase.png","/img/Hematite.png","/img/Obsidian.png","Ruby.png","/img/Sapphire.png"];
+function getRandomImage(imgAr, path) {
+  path = path || 'img/';
+  var num = Math.floor( Math.random() * imgAr.length );
+  var img = imgAr[ num ];
+  var imgStr = '<img src="' + path + img + '" alt = "">';
+  document.write(imgStr); document.close();
+}
 
 var cards = " , , , , , , , , , , , , , , , , , ".split(',');
 const gameContainer = document.querySelector('.game-container');
@@ -17,10 +24,10 @@ var cardFront = document.createElement('div');
 cardFront.className = "card-front card-face";
 cardBack.appendChild(cardFront);
 
-var backImage = document.createElement('img');
-cardFront.className = "card-front card-face";
-cardBack.appendChild(cardFront);
-
+// var img = document.createElement("img");
+// img.src = "/img/Amethyst.png";
+// var src = document.getElementById(".card-front");
+// cardFront.appendChild(img);
 }
 
 
