@@ -8,8 +8,23 @@ function getRandomImage(imgAr, path) {
   document.write(imgStr); document.close();
 }
 
-var cards = " , , , , , , , , , , , , , , , , , ".split(',');
+function shuffle(arr) { //fisher-yates shuffling
+  var i,
+      j,
+      temp;
+  for (i = arr.length - 1; i > 0; i--) {
+      j = Math.floor(Math.random() * (i + 1));
+      temp = arr[i];
+      arr[i] = arr[j];
+      arr[j] = temp;
+  }
+  return arr;    
+};
+
+var cards = ['amethyst','amethyst','bismuth','bismuth','chrysocolla','chrysocolla','erythrite','erythrite','euclase','euclase','hematite','hematite','obsidian','obsidian','ruby','ruby','sapphire','sapphire'.split(',')];
+var cardshuffle = shuffle(cards)
 const gameContainer = document.querySelector('.game-container');
+
 for (var c in cards) {
   var newElement = document.createElement('div');//skapar
   newElement.id = cards[c]; newElement.className = "cards";
@@ -24,11 +39,13 @@ var cardFront = document.createElement('div');
 cardFront.className = "card-front card-face";
 cardBack.appendChild(cardFront);
 
-// var img = document.createElement("img");
-// img.src = "/img/Amethyst.png";
-// var src = document.getElementById(".card-front");
-// cardFront.appendChild(img);
+
+//  var img = document.createElement("img");
+//  img.src = "/img/Amethyst.png";
+//  var src = document.getElementById(".card-front");
+//  cardFront.appendChild(img);
 }
+
 
 
 
